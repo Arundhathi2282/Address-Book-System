@@ -21,7 +21,8 @@ public class AddressBook {
 	}
 
 	public void performOperations() {
-		System.out.println("Enter 1 or 2");
+		System.out.println(
+				"Choose any one from below list\n1.Add Contact\n2.Edit Contact\n3.Delete Contact\n4.Show Contact");
 		int option = SC.nextInt();
 		switch (option) {
 		case 1:
@@ -29,6 +30,12 @@ public class AddressBook {
 			break;
 		case 2:
 			editContact();
+			break;
+		case 3:
+			deleteContact();
+			break;
+		case 4:
+			System.out.println(personList);
 			break;
 		default:
 			System.out.println("Enter a valid number");
@@ -65,16 +72,13 @@ public class AddressBook {
 	 * Editing the existing contact in the Address Book
 	 */
 	public void editContact() {
-		System.out.println("Enter User name to edit the contact");
+		System.out.println("Enter first name to edit the contact");
 		String firstName = SC.next();
 		for (int i = 0; i < personList.size(); i++) {
-			System.out.println(personList);
-			String name = personList.get(i).getFirstName();
-			if (name.equals(firstName)) {
+			if (personList.get(i).getFirstName().equals(firstName)) {
 				System.out.println(
 						"Choose from menu which index you want to edit\n1.First Name\n2.Last Name\n3.Address\n4.City\n5.State\n6.Zip\n7.Phone Number\n8.Email");
 				int choice = SC.nextInt();
-				// Person person = new Person();
 				switch (choice) {
 				case 1:
 					System.out.println("New First Name : ");
@@ -111,9 +115,23 @@ public class AddressBook {
 				default:
 					System.out.println("Enter a valid number");
 				}
-				System.out.println(personList);
 			}
 		}
+		System.out.println(personList);
+	}
+
+	/**
+	 * Deleting a contact using person name
+	 */
+	public void deleteContact() {
+		System.out.println("Enter first name to delete the contact");
+		String firstName = SC.next();
+		for (int i = 0; i < personList.size(); i++) {
+			if (personList.get(i).getFirstName().equals(firstName)) {
+				personList.remove(i);
+			}
+		}
+		System.out.println(personList);
 	}
 
 	/**
