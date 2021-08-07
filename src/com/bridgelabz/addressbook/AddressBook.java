@@ -20,6 +20,9 @@ public class AddressBook {
 		addressBook.performOperations();
 	}
 
+	/**
+	 * Here in this method you can perform what you want to perform
+	 */
 	public void performOperations() {
 		System.out.println(
 				"Choose any one from below list\n1.Add Contact\n2.Edit Contact\n3.Delete Contact\n4.Show Contact");
