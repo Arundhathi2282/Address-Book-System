@@ -8,7 +8,6 @@ import com.bridgelabz.addressbook.dto.Person;
 public class AddressBook {
 	static final Scanner SC = new Scanner(System.in);
 	ArrayList<Person> personList = new ArrayList<>();
-	Person person = new Person();
 
 	/**
 	 * Main method
@@ -26,14 +25,22 @@ public class AddressBook {
 	 * Adding new Contact to the Address Book
 	 */
 	public void addContact() {
-
+		Person person = new Person();
+		System.out.println("First Name : ");
 		person.setFirstName(SC.next());
+		System.out.println("Last Name : ");
 		person.setLastName(SC.next());
+		System.out.println("Address : ");
 		person.setAddress(SC.next());
+		System.out.println("City : ");
 		person.setCity(SC.next());
+		System.out.println("State : ");
 		person.setState(SC.next());
+		System.out.println("Zip : ");
 		person.setZip(SC.next());
+		System.out.println("Phone Number : ");
 		person.setPhoneNumber(SC.next());
+		System.out.println("Email : ");
 		person.setEmail(SC.next());
 		personList.add(person);
 		System.out.println(personList);
