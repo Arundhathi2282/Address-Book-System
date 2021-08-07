@@ -8,6 +8,7 @@ import com.bridgelabz.addressbook.dto.Person;
 
 public class Contact implements Book {
 	static final Scanner SC = new Scanner(System.in);
+	HashMap<String, ArrayList<Person>> addressBook = new HashMap<String, ArrayList<Person>>();
 	ArrayList<Person> personList = new ArrayList<>();
 
 	/**
@@ -38,6 +39,8 @@ public class Contact implements Book {
 
 	@Override
 	public void addContact() {
+		System.out.println("Enter address book name : ");
+		String addressBookName = SC.next();
 		Person person = new Person();
 		System.out.println("First Name : ");
 		person.setFirstName(SC.next());
@@ -56,7 +59,8 @@ public class Contact implements Book {
 		System.out.println("Email : ");
 		person.setEmail(SC.next());
 		personList.add(person);
-		System.out.println(personList);
+		addressBook.put(addressBookName, personList);
+		System.out.println(addressBook);
 	}
 
 	@Override
