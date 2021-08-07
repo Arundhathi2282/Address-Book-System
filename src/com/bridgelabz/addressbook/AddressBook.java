@@ -1,14 +1,16 @@
 package com.bridgelabz.addressbook;
 
+import java.util.ArrayList;
+
+import com.bridgelabz.addressbook.dto.Person;
+
 public class AddressBook {
-	/**
-	 * Main method from where the execution will start, Displaying Welcome message
-	 * 
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book System....!");
-
+		ArrayList<Person> personList = new ArrayList<>();
+		Person person = new Person();
+		personList.add(person);
+		System.out.println(personList);
 	}
 
 }
